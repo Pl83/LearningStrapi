@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "populatiries",
+  "info": {
+    "singularName": "populatiry",
+    "pluralName": "populatiries",
+    "displayName": "Populatiry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ArticleTitle": {
+      "type": "string",
+      "required": true
+    },
+    "Like": {
+      "type": "integer"
+    },
+    "dislike": {
+      "type": "integer"
+    }
+  }
+}
