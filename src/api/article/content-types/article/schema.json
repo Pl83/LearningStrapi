@@ -37,6 +37,11 @@
       "type": "uid",
       "targetField": "title",
       "required": false
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
     }
   }
 }
