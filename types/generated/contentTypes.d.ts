@@ -808,6 +808,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::populatiry.populatiry'
     >;
+    slug: Attribute.UID<'api::article.article', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

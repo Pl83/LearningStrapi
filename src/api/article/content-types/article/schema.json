@@ -32,6 +32,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::populatiry.populatiry"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
     }
   }
 }
