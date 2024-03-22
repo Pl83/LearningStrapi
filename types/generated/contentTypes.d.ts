@@ -809,7 +809,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::populatiry.populatiry'
     >;
     slug: Attribute.UID<'api::article.article', 'title'>;
-    tag: Attribute.Relation<'api::article.article', 'oneToOne', 'api::tag.tag'>;
+    tag: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -861,29 +861,6 @@ export interface ApiPopulatiryPopulatiry extends Schema.CollectionType {
   };
 }
 
-export interface ApiTagTag extends Schema.CollectionType {
-  collectionName: 'tags';
-  info: {
-    singularName: 'tag';
-    pluralName: 'tags';
-    displayName: 'Tag';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    tag: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -904,7 +881,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::populatiry.populatiry': ApiPopulatiryPopulatiry;
-      'api::tag.tag': ApiTagTag;
     }
   }
 }
